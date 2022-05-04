@@ -6,7 +6,7 @@ import * as DAT from 'dat.gui';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 let model = {
-	activeView: 1,
+	activeView: 0,
 	diamondParams:{
 		stretchIn: 4.299615859985352,
 		stretchOut: -4.299615859985352,
