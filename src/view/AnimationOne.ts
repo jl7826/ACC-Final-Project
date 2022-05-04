@@ -66,7 +66,7 @@ export class AnimationOne extends Frame{
 		}
 
         this.gltfLoader.load(
-            '/resources/models/scene.gltf',
+            './resources/models/scene.gltf',
             (gltf) =>
             {
 

@@ -10,6 +10,16 @@ export class AnimationTwo extends Frame {
 	constructor(model: any, renderer: WebGLRenderer) {
 		super(model, renderer)
 
+		this.environmentMapTexture = this.cubeTextureLoader.load([
+			'./resources/textures/environmentMaps/4/px.png',
+			'./resources/textures/environmentMaps/4/nx.png',
+			'./resources/textures/environmentMaps/4/py.png',
+			'./resources/textures/environmentMaps/4/ny.png',
+			'./resources/textures/environmentMaps/4/pz.png',
+			'./resources/textures/environmentMaps/4/nz.png',
+		])
+		this.scene.environment = this.environmentMapTexture
+
 		this.tl = gsap.timeline()
 
 		this.tlSettings = {
@@ -25,19 +35,8 @@ export class AnimationTwo extends Frame {
 		}
 
 		this.gltfLoader.load(
-            '/resources/models/scene.gltf',
+            './resources/models/scene.gltf',
             (gltf) =>{
-
-				this.environmentMapTexture = this.cubeTextureLoader.load([
-					'./resources/textures/environmentMaps/4/px.png',
-					'./resources/textures/environmentMaps/4/nx.png',
-					'./resources/textures/environmentMaps/4/py.png',
-					'./resources/textures/environmentMaps/4/ny.png',
-					'./resources/textures/environmentMaps/4/pz.png',
-					'./resources/textures/environmentMaps/4/nz.png',
-				])
-				this.scene.environment = this.environmentMapTexture
-				
 				// PYRAMIDS
 				const pyramids = new Group()
 				const pyramid : any = gltf.scene.children[1].children[0]
